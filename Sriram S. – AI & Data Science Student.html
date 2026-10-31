@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sriram S. – AI & Data Science Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F1F5F1; --sheet:#FBFDFB; --ink:#16251C; --muted:#53655A; --line:#C9D6CC;
+  --green:#1D6F42; --green-ink:#FFFFFF; --select:#E7B53A; --head:#E3EBE4;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1A14; --sheet:#15231A; --ink:#E6EFE8; --muted:#9DB1A3; --line:#2B4033;
+    --green:#4FB57F; --green-ink:#0B1610; --select:#E7B53A; --head:#1B2D21; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1A14; --sheet:#15231A; --ink:#E6EFE8; --muted:#9DB1A3; --line:#2B4033;
+  --green:#4FB57F; --green-ink:#0B1610; --select:#E7B53A; --head:#1B2D21; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--select);outline-offset:3px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--sheet);z-index:20}
+
+/* sheet tabs nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--head);border-bottom:1px solid var(--line)}
+nav ul{list-style:none;margin:0 auto;padding:8px 16px 0;max-width:980px;display:flex;gap:4px;overflow-x:auto}
+nav a{display:block;padding:8px 16px;border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--paper);color:var(--muted);text-decoration:none;font-weight:500;font-size:15px;white-space:nowrap}
+nav a:hover,nav a.on{background:var(--sheet);color:var(--ink)}
+nav a.on{box-shadow:inset 0 3px 0 var(--green);font-weight:600}
+
+main{max-width:980px;margin:0 auto;padding:0 16px 48px}
+section{padding:56px 0 8px}
+h2{font-size:clamp(28px,5vw,40px);font-weight:700;margin-bottom:24px}
+
+/* hero sheet */
+.sheet{margin-top:32px;border:1px solid var(--line);background:var(--sheet);border-radius:6px;overflow:hidden}
+.bar{display:flex;align-items:stretch;border-bottom:1px solid var(--line);font-size:14px;background:var(--head)}
+.bar .ref{padding:6px 14px;border-right:1px solid var(--line);font-weight:600;min-width:64px}
+.bar .fx{padding:6px 14px;color:var(--muted);font-style:italic;border-right:1px solid var(--line)}
+.bar .val{padding:6px 14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grid{display:grid;grid-template-columns:36px 1fr;font-size:13px;color:var(--muted)}
+.grid .corner,.grid .cols,.grid .rows>div{background:var(--head)}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.cols span,.rows div{text-align:center;padding:3px 0}
+.cols span{border-left:1px solid var(--line)}
+.rows div{border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.corner{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cells{padding:clamp(24px,5vw,56px) clamp(20px,4vw,48px);color:var(--ink);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:100% 56px,25% 100%;background-position:0 -1px}
+.hero-name{display:inline-block;font-size:clamp(48px,11vw,112px);font-weight:800;letter-spacing:-.03em;padding:2px 14px 6px;border:2px solid var(--green);background:var(--sheet);position:relative}
+.hero-name::after{content:"";position:absolute;right:-6px;bottom:-6px;width:10px;height:10px;background:var(--green);border:2px solid var(--sheet)}
+.role{font-size:clamp(18px,3vw,24px);margin:28px 0 0;max-width:34ch;background:var(--sheet);display:inline-block;padding:0 6px}
+.role b{font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 20px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--green)}
+.btn.fill{background:var(--green);color:var(--green-ink)}
+.btn.line{background:var(--sheet);color:var(--green)}
+.btn:hover{border-color:var(--select)}
+
+/* content */
+.lead{font-size:clamp(20px,3vw,26px);max-width:44ch;margin:0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);background:var(--sheet);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:16px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--head);font-weight:600;color:var(--muted);font-size:14px}
+tr:last-child td{border-bottom:0}
+td strong{font-weight:600}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--select);color:#2A1E00;font-weight:600;font-size:14px}
+.two{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:24px}
+.card h3{font-size:24px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted)}
+.skill{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.level{font-size:14px;font-weight:600;color:var(--green)}
+.contact a.big{display:block;font:700 clamp(22px,5vw,40px)/1.2 "Bricolage Grotesque",Figtree,sans-serif;margin:0 0 8px;overflow-wrap:anywhere}
+.contact ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:8px}
+footer{max-width:980px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:560px){.bar .fx{display:none}.grid{grid-template-columns:28px 1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections">
+  <ul>
+    <li><a href="#home" class="on">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#certificate">Certificate</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="home" style="padding-top:0">
+    <div class="sheet">
+      <div class="bar" aria-hidden="true"><span class="ref">A1</span><span class="fx">fx</span><span class="val">Sriram S. – B.Tech Artificial Intelligence &amp; Data Science</span></div>
+      <div class="grid">
+        <div class="corner" aria-hidden="true"></div>
+        <div class="cols" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+        <div class="rows" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div>
+        <div class="cells">
+          <h1 class="hero-name">Sriram S.</h1>
+          <p class="role"><b>B.Tech student in Artificial Intelligence &amp; Data Science</b> at Mailam Engineering College.</p>
+          <div class="cta">
+            <a class="btn fill" href="#contact">Get in touch</a>
+            <a class="btn line" href="#project">See my project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About me</h2>
+    <p class="lead">I’m looking for an opportunity to learn new things, improve my skills, and gain practical experience.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Qualification</th><th>School / College</th><th>Score</th><th>Year</th></tr></thead>
+        <tbody>
+          <tr><td><strong>B.Tech – Artificial Intelligence &amp; Data Science</strong></td><td>Mailam Engineering College</td><td>–</td><td><span class="pill">Currently pursuing</span></td></tr>
+          <tr><td><strong>Higher Secondary (12th)</strong></td><td>St. Ann’s Higher Secondary School, Tindivanam</td><td>70%</td><td>2025–2026</td></tr>
+          <tr><td><strong>SSLC (10th)</strong></td><td>Cooshal Chand Higher Secondary School, Tindivanam</td><td>75%</td><td>2023–2024</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="two">
+      <div class="card"><div class="skill"><h3>Python</h3><span class="level">Basic</span></div><p>Learning the fundamentals as part of my AI &amp; Data Science course.</p></div>
+      <div class="card"><div class="skill"><h3>MS Excel</h3><span class="level">Certified</span></div><p>Completed an Excel Designer course and earned a certificate.</p></div>
+    </div>
+  </section>
+
+  <section id="project">
+    <h2>Project</h2>
+    <div class="card">
+      <h3>Basic Information Webpage</h3>
+      <p>A simple webpage that presents basic information in a clear, organized format. My first step into building for the web.</p>
+    </div>
+  </section>
+
+  <section id="certificate">
+    <h2>Certificate</h2>
+    <div class="card">
+      <h3>Excel Designer</h3>
+      <p>Certificate of Completion</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <a class="big" href="mailto:Sriramtech022008@gmail.com">Sriramtech022008@gmail.com</a>
+    <ul>
+      <li>Phone: <a href="tel:+916382345013">6382345013</a></li>
+      <li>GitHub: <a href="https://github.com/sriramtech022008-art" rel="noopener">sriramtech022008-art</a></li>
+      <li>LinkedIn: Sriram S.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>© Sriram S.</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function update(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+  }
+  window.addEventListener('scroll',update,{passive:true});update();
+})();
+</script>
+</body>
+</html>
